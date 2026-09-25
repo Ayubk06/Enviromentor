@@ -1,0 +1,136 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard - Enviromentor</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%233ddc84' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'><path d='M22 12h-4l-3 9L9 3l-3 9H2'/></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body id="dashboardRoot">
+  <nav>
+    <div class="nav-inner">
+      <a href="index.html" class="brand">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+        Enviromentor
+      </a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="dashboard.html" class="nav-cta active">Dashboard</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container dash-main">
+    <div class="page-head">
+      <div>
+        <h1>Live Dashboard</h1>
+        <p class="subtitle">Readings refresh automatically every 4 seconds · simulated data source, swappable to real hardware later.</p>
+      </div>
+      <span class="live-badge"><span class="live-dot"></span>Live</span>
+    </div>
+
+    <div id="statusBanner" class="status-banner normal">Loading...</div>
+
+    <section class="metric-group">
+      <h2 class="group-title">Air Quality</h2>
+      <div class="grid grid-4">
+        <div class="card stat">
+          <div class="stat-top">
+            <span class="stat-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17.7 7.7a2.5 2.5 0 1 1 1.8 4.3H2"/><path d="M9.6 4.6A2 2 0 1 1 11 8H2"/><path d="M12.6 19.4A2 2 0 1 0 14 16H2"/></svg></span>
+            <span class="label">PM2.5</span>
+          </div>
+          <div class="value" id="card-pm25">--</div>
+        </div>
+        <div class="card stat">
+          <div class="stat-top">
+            <span class="stat-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/></svg></span>
+            <span class="label">Carbon Monoxide</span>
+          </div>
+          <div class="value" id="card-co">--</div>
+        </div>
+        <div class="card stat">
+          <div class="stat-top">
+            <span class="stat-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 4v10.54a4 4 0 1 1-4 0V4a2 2 0 0 1 4 0Z"/></svg></span>
+            <span class="label">Temperature</span>
+          </div>
+          <div class="value" id="card-temp">--</div>
+        </div>
+        <div class="card stat">
+          <div class="stat-top">
+            <span class="stat-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7z"/></svg></span>
+            <span class="label">Humidity</span>
+          </div>
+          <div class="value" id="card-humidity">--</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="metric-group">
+      <h2 class="group-title">Water Quality</h2>
+      <div class="grid grid-4">
+        <div class="card stat">
+          <div class="stat-top">
+            <span class="stat-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 2v7.53L4.72 18.6A2 2 0 0 0 6.44 21h11.12a2 2 0 0 0 1.72-2.4L14 9.47V2"/><path d="M8.5 2h7"/><path d="M7 16h10"/></svg></span>
+            <span class="label">Water pH</span>
+          </div>
+          <div class="value" id="card-ph">--</div>
+        </div>
+        <div class="card stat">
+          <div class="stat-top">
+            <span class="stat-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 6c.6.5 1.2 1 2.5 1C7 7 7 5 9.5 5c2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/><path d="M2 12c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/><path d="M2 18c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/></svg></span>
+            <span class="label">Turbidity</span>
+          </div>
+          <div class="value" id="card-turbidity">--</div>
+        </div>
+        <div class="card stat">
+          <div class="stat-top">
+            <span class="stat-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 3h15"/><path d="M6 3v16a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V3"/><path d="M6 14h12"/></svg></span>
+            <span class="label">TDS</span>
+          </div>
+          <div class="value" id="card-tds">--</div>
+        </div>
+        <div class="card stat">
+          <div class="stat-top">
+            <span class="stat-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="8.5" cy="8.5" r="3.5"/><circle cx="16.5" cy="15.5" r="2.5"/><circle cx="7.5" cy="17.5" r="1.8"/></svg></span>
+            <span class="label">Dissolved Oxygen</span>
+          </div>
+          <div class="value" id="card-dissolvedOxygen">--</div>
+        </div>
+      </div>
+    </section>
+
+    <div class="grid grid-4">
+      <div class="card stat">
+        <div class="stat-top">
+          <span class="stat-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></svg></span>
+          <span class="label">Noise Level</span>
+        </div>
+        <div class="value" id="card-noise">--</div>
+      </div>
+
+      <div class="chart-panel span-3">
+        <div class="chart-head">
+          <h2>Historical trends</h2>
+          <span class="hint">PM2.5 &amp; noise over time</span>
+        </div>
+        <canvas id="historyChart" height="90"></canvas>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <span>Enviromentor · Environmental Monitoring using Sensors &amp; Data Analysis</span>
+      <span class="mono">Simulated data · refreshes every 4s</span>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

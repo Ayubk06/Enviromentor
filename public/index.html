@@ -1,0 +1,120 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enviromentor</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%233ddc84' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'><path d='M22 12h-4l-3 9L9 3l-3 9H2'/></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav>
+    <div class="nav-inner">
+      <a href="index.html" class="brand">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+        Enviromentor
+      </a>
+      <div class="nav-links">
+        <a href="index.html" class="active">Home</a>
+        <a href="about.html">About</a>
+        <a href="dashboard.html" class="nav-cta">Dashboard</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <header class="hero">
+      <div class="container">
+        <span class="eyebrow"><span class="live-dot"></span>Real-time monitoring station</span>
+        <h1>See your environment <span class="grad">as it happens</span>.</h1>
+        <p class="subtitle">Tracking air quality, water quality, and noise levels using low-cost sensors and real-time data analysis — benchmarked against NAAQS and BIS reference standards.</p>
+        <div class="hero-actions">
+          <a href="dashboard.html" class="btn btn-primary">
+            View live dashboard
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+          <a href="about.html" class="btn btn-ghost">How it works</a>
+        </div>
+      </div>
+    </header>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>Live snapshot</h2>
+          <span class="live-badge"><span class="live-dot"></span>Live</span>
+        </div>
+        <div id="quickStats" class="grid grid-4">
+          <div class="card stat">
+            <div class="stat-top">
+              <span class="stat-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17.7 7.7a2.5 2.5 0 1 1 1.8 4.3H2"/><path d="M9.6 4.6A2 2 0 1 1 11 8H2"/><path d="M12.6 19.4A2 2 0 1 0 14 16H2"/></svg></span>
+              <span class="label">PM2.5</span>
+            </div>
+            <div class="value" id="qs-pm25">--</div>
+          </div>
+          <div class="card stat">
+            <div class="stat-top">
+              <span class="stat-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg></span>
+              <span class="label">Noise Level</span>
+            </div>
+            <div class="value" id="qs-noise">--</div>
+          </div>
+          <div class="card stat">
+            <div class="stat-top">
+              <span class="stat-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 2v7.53L4.72 18.6A2 2 0 0 0 6.44 21h11.12a2 2 0 0 0 1.72-2.4L14 9.47V2"/><path d="M8.5 2h7"/><path d="M7 16h10"/></svg></span>
+              <span class="label">Water pH</span>
+            </div>
+            <div class="value" id="qs-ph">--</div>
+          </div>
+          <div class="card stat">
+            <div class="stat-top">
+              <span class="stat-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></span>
+              <span class="label">Overall Status</span>
+            </div>
+            <div class="value" id="qs-status">--</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt">
+      <div class="container">
+        <div class="section-head"><h2>What we monitor</h2></div>
+        <div class="grid grid-3">
+          <div class="card about-card">
+            <span class="feature-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17.7 7.7a2.5 2.5 0 1 1 1.8 4.3H2"/><path d="M9.6 4.6A2 2 0 1 1 11 8H2"/><path d="M12.6 19.4A2 2 0 1 0 14 16H2"/></svg></span>
+            <h3>Air Quality</h3>
+            <p>PM2.5 particulate matter and carbon monoxide (CO), benchmarked against NAAQS thresholds.</p>
+          </div>
+          <div class="card about-card">
+            <span class="feature-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7z"/></svg></span>
+            <h3>Water Quality</h3>
+            <p>pH, turbidity, total dissolved solids (TDS), and dissolved oxygen, benchmarked against BIS drinking-water guidelines.</p>
+          </div>
+          <div class="card about-card">
+            <span class="feature-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg></span>
+            <h3>Noise Levels</h3>
+            <p>Ambient sound level in decibels, flagged when readings exceed safe thresholds.</p>
+          </div>
+        </div>
+        <p class="section-note">Head to the <a href="dashboard.html" class="text-link">Dashboard</a> for live readings.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <span>Enviromentor · Environmental Monitoring using Sensors &amp; Data Analysis</span>
+      <span class="mono">Simulated demonstration data</span>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+  <script>
+    loadQuickStats();
+  </script>
+</body>
+</html>
